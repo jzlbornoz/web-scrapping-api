@@ -7,9 +7,6 @@ WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install
-
 RUN npm ci 
 COPY . .
-CMD [ "node", "src/index.ts" ]
+CMD [ "node", "dist/index.js" ]
